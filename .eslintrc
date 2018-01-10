@@ -1,0 +1,73 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "plugins": [
+        "react"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "eslint-config-airbnb"
+    ],
+    "rules": {
+      // general
+      "semi": [2, "never"],
+      "arrow-body-style": 0,
+      "arrow-parens": [2, "as-needed"],
+      "class-methods-use-this": 0,
+
+      // react
+      "react/no-array-index-key": 0,
+      "react/jsx-filename-extension": 0,
+      "react/prop-types": 0,
+      "react/jsx-boolean-value": 0,
+      "react/sort-comp": [2, {
+        order: [
+          "static-methods",
+          "lifecycle",
+          "/^on.+$/",
+          "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+          "everything-else",
+          "/^render.+$/",
+          "render"
+        ],
+        groups: {
+          lifecycle: [
+            "displayName",
+            "state",
+            "props",
+            "propTypes",
+            "contextTypes",
+            "childContextTypes",
+            "mixins",
+            "statics",
+            "defaultProps",
+            "constructor",
+            "getDefaultProps",
+            "getInitialState",
+            "getChildContext",
+            "componentWillMount",
+            "componentDidMount",
+            "componentWillReceiveProps",
+            "shouldComponentUpdate",
+            "componentWillUpdate",
+            "componentDidUpdate",
+            "componentWillUnmount"
+          ]
+        }
+      }],
+
+      // import
+      "import/first": 0,
+      "import/no-unresolved": 0,
+      "import/extensions": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/prefer-default-export": 0,
+
+      // jsx-a11y
+      "jsx-a11y/href-no-hash": 0
+    }
+}
