@@ -24,19 +24,7 @@ export class Login extends Component {
     missingFieldErr: false,
   }
 
-  constructor() {
-    super()
-
-    const self = this
-    self.updateEmail = this.updateEmail.bind(this)
-    self.updatePassword = this.updatePassword.bind(this)
-    self.login = this.login.bind(this)
-    self.goToSignup = this.goToSignup.bind(this)
-    self.renderError = this.renderError.bind(this)
-    self.renderMissingFieldErr = this.renderMissingFieldErr.bind(this)
-  }
-
-  login() {
+  login = () => {
     const { navigation } = this.props
     const { apiService } = this.props.screenProps
     const { email, password } = this.state
@@ -61,15 +49,15 @@ export class Login extends Component {
     }
   }
 
-  updateEmail(email) {
+  updateEmail = email => {
     this.setState({ email })
   }
 
-  updatePassword(password) {
+  updatePassword = password => {
     this.setState({ password })
   }
 
-  goToSignup() {
+  goToSignup = () => {
     const { navigation } = this.props
     navigation.navigate('Signup')
   }

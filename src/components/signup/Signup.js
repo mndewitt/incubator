@@ -23,19 +23,7 @@ export class Signup extends Component {
     errMessage: null,
   }
 
-  constructor() {
-    super()
-
-    const self = this
-    self.updateEmail = this.updateEmail.bind(this)
-    self.updatePassword = this.updatePassword.bind(this)
-    self.updateConfirmPassword = this.updateConfirmPassword.bind(this)
-    self.signup = this.signup.bind(this)
-    self.renderPasswordMismatch = this.renderPasswordMismatch.bind(this)
-    self.renderErrMessage = this.renderErrMessage.bind(this)
-  }
-
-  signup() {
+  signup = () => {
     const { navigation } = this.props
     const { apiService } = this.props.screenProps
     const { email, password, confirmPassword } = this.state
@@ -61,15 +49,15 @@ export class Signup extends Component {
     }
   }
 
-  updateEmail(email) {
+  updateEmail = email => {
     this.setState({ email })
   }
 
-  updatePassword(password) {
+  updatePassword = password => {
     this.setState({ password })
   }
 
-  updateConfirmPassword(confirmPassword) {
+  updateConfirmPassword = confirmPassword => {
     this.setState({ confirmPassword })
   }
 
